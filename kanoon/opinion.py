@@ -5,7 +5,16 @@ from pypdf import PdfReader
 class Opinion:
     def __init__(self, file):
         self.reader = PdfReader(file)
+
+    def parse(self):
         self.text = self.text()
+        self.citation = self.citation()
+        self.forum = self.forum()
+        self.case_number = self.case_number()
+        self.appellants = self.appellants()
+        self.respondents = self.respondents()
+        self.date_decided = self.date_decided()
+        self.case_note = self.casenote()
 
     def text(self):
         text = []
